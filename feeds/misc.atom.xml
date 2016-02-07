@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yang Sun</title><link href="http://yangsun.me/" rel="alternate"></link><link href="http://yangsun.me/feeds/misc.atom.xml" rel="self"></link><id>http://yangsun.me/</id><updated>2016-02-06T22:58:00+00:00</updated><entry><title>Java SE 7 Programmer I Exam - Passed!</title><link href="http://yangsun.me/posts/2016-02/java-se-7-programmer-i-exam-passed.html" rel="alternate"></link><updated>2016-02-06T22:58:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-02-06:posts/2016-02/java-se-7-programmer-i-exam-passed.html</id><summary type="html">&lt;p&gt;After 5 days of reviewing my OCA Java SE 7 Programmer I Study Guide notes, I took the exam.&lt;/p&gt;
+&lt;p&gt;This is my first attempt at official 1Z0-803 Java SE 7 Programmer I exam (aka OCA Java) after two mock exams with an average score of 68%. Guess what? I got 86%! Yes! I am now an Oracle certified Java programmer!&lt;/p&gt;
+&lt;h3&gt;The Exam Centre&lt;/h3&gt;
+&lt;p&gt;I took the exam in &lt;a href="http://www.theexamcentre.com/"&gt;The Exam Centre&lt;/a&gt;. It is located in the Leopardstown village, just of Leopardstown Luas stop. The exam centre is super easy to find and with plenty of parking spaces. I arrived 20 minutes earlier, the register process is quick and easy. Just a few minutes after, I completed few forms and have my photo taken at the reception. The friendly lady guide me to the room where the exam is taken place. The room has around 20 computers in their own cubics.&lt;/p&gt;
+&lt;h3&gt;The Exam&lt;/h3&gt;
+&lt;p&gt;Unlike the mock up exams included in the Java Study Guide, the official exam has 70 questions which include some question without mark. It takes me one hour and forty minutes to completed all the questions, which gave me few minutes to go back to the questions that I am not sure about.&lt;/p&gt;
+&lt;h3&gt;Getting the Result&lt;/h3&gt;
+&lt;p&gt;Just 15 minutes after the submitting my exam, the exam result email arrived in my inbox. I didn't feel any kind of nervous, as I know I definitely passed my exam. The 86% accuracy surprised me as I only got 68% in the mockup exam just the night before. I believe that the real exam is less tricky than the mock up exam which might be the main reason I get a better result.&lt;/p&gt;
+&lt;h3&gt;What's next?&lt;/h3&gt;
+&lt;p&gt;The 1Z0-803 exam only gives me an Associate level certificate, in order to achieve a Professional level certificate, there is one more exam - 1Z0-804 which is the Part II of the Oracle Study Guide. The part I is merely over 300 pages which took me about two weeks full-time if i added up all the time I spent, but the part II is span over 600 pages - it's more than the double of the first part and even harder. I think 3 - 4 weeks might be a good estimate. Forgot to mention the good part of the 1Z0-804 exam, &lt;del&gt;it only cost about 100 euro&lt;/del&gt;(OK, I am wrong, it is the same price as part one exam - 212 euro)&lt;/p&gt;
+&lt;p&gt;As my week long holiday will finish next Monday, I will need to study after work which might even take more time.&lt;/p&gt;
+&lt;p&gt;I am going to use the same way to study the part two Study Guide&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Read the Study Guide&lt;/li&gt;
+&lt;li&gt;Do the self-test after each chapter&lt;/li&gt;
+&lt;li&gt;Read the book again and take notes&lt;/li&gt;
+&lt;li&gt;Do the self-test&lt;/li&gt;
+&lt;li&gt;Try mock up exam&lt;/li&gt;
+&lt;li&gt;Read the notes&lt;/li&gt;
+&lt;li&gt;Try mock up exam&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I will have post my Part two notes Google Doc link HERE. &lt;/p&gt;</summary><category term="java"></category><category term="certificate"></category><category term="exam"></category></entry><entry><title>My OCA Java SE 7 Learning Journal</title><link href="http://yangsun.me/posts/2016-01/my-oca-java-se-7-learning-journal.html" rel="alternate"></link><updated>2016-02-06T18:48:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-01-15:posts/2016-01/my-oca-java-se-7-learning-journal.html</id><summary type="html">&lt;p&gt;Since 2012, I started considering to take the OCA Java exam(It was Java 6 at that time). After three years, I am still in the nowhere. In December 2015, I finished reading Oracle's OCA/OCP Java SE 7 Programmer I &amp;amp; II Study Guide Part I and took the mock exam myself. I got 58% in score three times in a row and then, I decided not to take the exam until I can get 75% at least.&lt;/p&gt;
+&lt;p&gt;Now, nearly two months later, I am still where I am in December last year. I guess if I keep reading the book and practise with the sample questions, I might already get the certificate by now. What was I doing in my last two months? Ehmm... I can't remember.&lt;/p&gt;
+&lt;p&gt;Ok, let's make it serious. From today - 15th January 2016, I will start reviewing it again. This time, I will keep writing some learning journal while I am reading the book and answering the sample question.&lt;/p&gt;
+&lt;p&gt;I am using Google Doc for notes taking.
+&lt;a href="https://docs.google.com/document/d/1IjwKHtsJoiTtNvqIbhtkyjJgPxiXISo_MYiiCGmlOIc/edit?usp=sharing"&gt;My Java SE 7 Programmer I Notes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Let's see what I can get!&lt;/p&gt;
+&lt;h3&gt;Update on 6th Feberary&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://yangsun.me/posts/2016-02/java-se-7-programmer-i-exam-passed.html"&gt;I passed my OCA Java SE 7 Programmer Exam!&lt;/a&gt;&lt;/p&gt;</summary><category term="java"></category><category term="certificate"></category><category term="exam"></category></entry><entry><title>Hello World</title><link href="http://yangsun.me/posts/2016-01/hello-world.html" rel="alternate"></link><updated>2016-01-12T21:32:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-01-12:posts/2016-01/hello-world.html</id><summary type="html">&lt;h3&gt;Welcome to Yang Sun's blog&lt;/h3&gt;
+&lt;p&gt;Hello World! This is my first post in this blog, I am going to use this blog as a place to write my thought on programming, reading and all the bits and bobs.&lt;/p&gt;
+&lt;p&gt;As the time you see this post, the site is still under construction.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Site under construction" src="http://yangsun.me/images/under_construction.png" /&gt;&lt;/p&gt;</summary></entry></feed>
