@@ -3,8 +3,10 @@
 <head>
         <meta charset="utf-8" />
         <title>Yang Sun - Tags</title>
-        <link rel="stylesheet" href="http://yangsun.me/theme/css/main.css" />
-        <link href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/main.css" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,27 +18,28 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="http://yangsun.me/">Yang Sun </a></h1>
+                <h1><a href="http://localhost:8000/">Yang Sun </a></h1>
                 <nav><ul>
-                    <li><a href="http://yangsun.me/pages/about.html">About</a></li>
-                    <li><a href="http://yangsun.me/pages/projects.html">Projects</a></li>
+                    <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+                    <li><a href="http://localhost:8000/pages/projects.html">Projects</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
 <section id="content" class="body">
     <h1>Tags for Yang Sun</h1>
     <ul>
-        <li><a href="http://yangsun.me/tag/certificate.html">certificate</a> (2)</li>
-        <li><a href="http://yangsun.me/tag/exam.html">exam</a> (2)</li>
-        <li><a href="http://yangsun.me/tag/java.html">java</a> (2)</li>
+        <li><a href="http://localhost:8000/tag/certificate.html">certificate</a> (2)</li>
+        <li><a href="http://localhost:8000/tag/exam.html">exam</a> (2)</li>
+        <li><a href="http://localhost:8000/tag/java.html">java</a> (2)</li>
     </ul>
 </section>
+
 
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://ie.linkedin.com/in/yangsuntcd">LinkedIn</a></li>
                             <li><a href="#">Another social link</a></li>
@@ -45,9 +48,11 @@
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
-                <!--<address id="about" class="vcard body"></address><!-- /#about -->
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
 
-                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>. The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
     <script type="text/javascript">
@@ -69,5 +74,6 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
 </body>
 </html>

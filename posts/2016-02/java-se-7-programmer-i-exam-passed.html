@@ -3,8 +3,10 @@
 <head>
         <meta charset="utf-8" />
         <title>Java SE 7 Programmer I Exam - Passed!</title>
-        <link rel="stylesheet" href="http://yangsun.me/theme/css/main.css" />
-        <link href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/main.css" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,17 +18,17 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="http://yangsun.me/">Yang Sun </a></h1>
+                <h1><a href="http://localhost:8000/">Yang Sun </a></h1>
                 <nav><ul>
-                    <li><a href="http://yangsun.me/pages/about.html">About</a></li>
-                    <li><a href="http://yangsun.me/pages/projects.html">Projects</a></li>
+                    <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+                    <li><a href="http://localhost:8000/pages/projects.html">Projects</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://yangsun.me/posts/2016-02/java-se-7-programmer-i-exam-passed.html" rel="bookmark"
+        <a href="http://localhost:8000/posts/2016-02/java-se-7-programmer-i-exam-passed.html" rel="bookmark"
            title="Permalink to Java SE 7 Programmer I Exam - Passed!">Java SE 7 Programmer I Exam - Passed!</a></h1>
     </header>
 
@@ -41,10 +43,10 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="http://yangsun.me/author/yang-sun.html">Yang Sun</a>
+                By                         <a class="url fn" href="http://localhost:8000/author/yang-sun.html">Yang Sun</a>
         </address>
-<p>In <a href="http://yangsun.me/category/misc.html">misc</a>.</p>
-<p>tags: <a href="http://yangsun.me/tag/java.html">java</a> <a href="http://yangsun.me/tag/certificate.html">certificate</a> <a href="http://yangsun.me/tag/exam.html">exam</a> </p>
+<p>In <a href="http://localhost:8000/category/misc.html">misc</a>.</p>
+<p>tags: <a href="http://localhost:8000/tag/java.html">java</a> <a href="http://localhost:8000/tag/certificate.html">certificate</a> <a href="http://localhost:8000/tag/exam.html">exam</a> </p>
 </footer><!-- /.post-info -->      <p>After 5 days of reviewing my OCA Java SE 7 Programmer I Study Guide notes, I took the exam.</p>
 <p>This is my first attempt at official 1Z0-803 Java SE 7 Programmer I exam (aka OCA Java) after two mock exams with an average score of 68%. Guess what? I got 86%! Yes! I am now an Oracle certified Java programmer!</p>
 <h3>The Exam Centre</h3>
@@ -69,12 +71,14 @@
 <p>I will have post my Part two notes Google Doc link HERE. </p>
     </div><!-- /.entry-content -->
     <div class="comments">
-      <h2>Comments !</h2>
+      <div class="comments_header">
+        <h2><p>There are <a href="http://localhost:8000/posts/2016-02/java-se-7-programmer-i-exam-passed.html#disqus_thread">comments</a>.</p></h2>
+      </div>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'yangsunme';
         var disqus_identifier = 'posts/2016-02/java-se-7-programmer-i-exam-passed.html';
-        var disqus_url = 'http://yangsun.me/posts/2016-02/java-se-7-programmer-i-exam-passed.html';
+        var disqus_url = 'http://localhost:8000/posts/2016-02/java-se-7-programmer-i-exam-passed.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//yangsunme.disqus.com/embed.js';
@@ -84,13 +88,33 @@
       <noscript>Please enable JavaScript to view the comments.</noscript>
     </div>
 
+<script>
+    $(".comments_header").click(function () {
+
+    $header = $(this);
+    //getting the next element
+    $content = $header.next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+        $header.text(function () {
+            //change text based on condition
+            //return $content.is(":visible") ? "Collapse" : "Expand";
+        });
+    });
+
+});
+    </script>
+
   </article>
 </section>
+
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://ie.linkedin.com/in/yangsuntcd">LinkedIn</a></li>
                             <li><a href="#">Another social link</a></li>
@@ -99,9 +123,11 @@
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
-                <!--<address id="about" class="vcard body"></address><!-- /#about -->
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
 
-                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>. The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
     <script type="text/javascript">
@@ -123,5 +149,6 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
 </body>
 </html>

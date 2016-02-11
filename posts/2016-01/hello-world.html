@@ -3,8 +3,10 @@
 <head>
         <meta charset="utf-8" />
         <title>Hello World</title>
-        <link rel="stylesheet" href="http://yangsun.me/theme/css/main.css" />
-        <link href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <link rel="stylesheet" href="http://localhost:8000/theme/css/main.css" />
+        <link href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Atom Feed" />
+        <script src="http://code.jquery.com/jquery.min.js"></script>
+
 
         <!--[if IE]>
             <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -16,17 +18,17 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="http://yangsun.me/">Yang Sun </a></h1>
+                <h1><a href="http://localhost:8000/">Yang Sun </a></h1>
                 <nav><ul>
-                    <li><a href="http://yangsun.me/pages/about.html">About</a></li>
-                    <li><a href="http://yangsun.me/pages/projects.html">Projects</a></li>
+                    <li><a href="http://localhost:8000/pages/about.html">About</a></li>
+                    <li><a href="http://localhost:8000/pages/projects.html">Projects</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://yangsun.me/posts/2016-01/hello-world.html" rel="bookmark"
+        <a href="http://localhost:8000/posts/2016-01/hello-world.html" rel="bookmark"
            title="Permalink to Hello World">Hello World</a></h1>
     </header>
 
@@ -41,22 +43,24 @@
         </abbr>
 
         <address class="vcard author">
-                By                         <a class="url fn" href="http://yangsun.me/author/yang-sun.html">Yang Sun</a>
+                By                         <a class="url fn" href="http://localhost:8000/author/yang-sun.html">Yang Sun</a>
         </address>
-<p>In <a href="http://yangsun.me/category/misc.html">misc</a>.</p>
+<p>In <a href="http://localhost:8000/category/misc.html">misc</a>.</p>
 
 </footer><!-- /.post-info -->      <h3>Welcome to Yang Sun's blog</h3>
 <p>Hello World! This is my first post in this blog, I am going to use this blog as a place to write my thought on programming, reading and all the bits and bobs.</p>
 <p>As the time you see this post, the site is still under construction.</p>
-<p><img alt="Site under construction" src="http://yangsun.me/images/under_construction.png" /></p>
+<p><img alt="Site under construction" src="http://localhost:8000/images/under_construction.png" /></p>
     </div><!-- /.entry-content -->
     <div class="comments">
-      <h2>Comments !</h2>
+      <div class="comments_header">
+        <h2><p>There are <a href="http://localhost:8000/posts/2016-01/hello-world.html#disqus_thread">comments</a>.</p></h2>
+      </div>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
         var disqus_shortname = 'yangsunme';
         var disqus_identifier = 'posts/2016-01/hello-world.html';
-        var disqus_url = 'http://yangsun.me/posts/2016-01/hello-world.html';
+        var disqus_url = 'http://localhost:8000/posts/2016-01/hello-world.html';
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//yangsunme.disqus.com/embed.js';
@@ -66,13 +70,33 @@
       <noscript>Please enable JavaScript to view the comments.</noscript>
     </div>
 
+<script>
+    $(".comments_header").click(function () {
+
+    $header = $(this);
+    //getting the next element
+    $content = $header.next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $content.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+        $header.text(function () {
+            //change text based on condition
+            //return $content.is(":visible") ? "Collapse" : "Expand";
+        });
+    });
+
+});
+    </script>
+
   </article>
 </section>
+
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="http://localhost:8000/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://ie.linkedin.com/in/yangsuntcd">LinkedIn</a></li>
                             <li><a href="#">Another social link</a></li>
@@ -81,9 +105,11 @@
         </section><!-- /#extras -->
 
         <footer id="contentinfo" class="body">
-                <!--<address id="about" class="vcard body"></address><!-- /#about -->
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
 
-                <p>Proudly powered by <a href="http://getpelican.com/">Pelican</a>. The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
     <script type="text/javascript">
@@ -105,5 +131,6 @@
         (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
     }());
 </script>
+
 </body>
 </html>

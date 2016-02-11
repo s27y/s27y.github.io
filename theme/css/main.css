@@ -422,6 +422,10 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 	#about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
 	
 	/* Comments */
+	#disqus_thread {
+    display: none;
+    padding : 5px;
+	}
 	#comments-list {list-style: none; margin: 0 1em;}
 	#comments-list blockquote {
 		background: #f8f8f8;
