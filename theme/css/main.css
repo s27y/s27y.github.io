@@ -59,13 +59,13 @@ nav {
 
 * Tags */
 .list-of-tags {
-    padding:5px 0 ;
+
 }
 
 .list-of-tags li {
     line-height:28px;
-    float:left;
-    margin:0px;
+    display: inline;
+
 }
 
 .list-of-tags a {
