@@ -94,6 +94,11 @@ nav {
 	color: #666;
 }
 
+/* Comments*/
+#disqus_thread {
+	display: none;
+}
+
 /* Page Footer */
 #footer-about {
 	text-align: right;

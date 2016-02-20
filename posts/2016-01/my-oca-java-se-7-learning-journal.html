@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-          <title>My OCA Java SE 7 Learning Journal  · Yang Sun
+      <title>My OCA Java SE 7 Learning Journal  · Yang Sun
 </title>
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
 
-        <link rel="stylesheet" href="http://yangsun.me/theme/css/main.css" />
-        <link href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Full Atom Feed" />
-        <link href="http://yangsun.me/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Categories Atom Feed" />
+    <link rel="stylesheet" href="http://yangsun.me/theme/css/main.css" />
+    <link href="http://yangsun.me/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Full Atom Feed" />
+    <link href="http://yangsun.me/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Yang Sun Categories Atom Feed" />
 
     <meta name="author" content="Yang Sun" />
 
@@ -16,6 +16,7 @@
     <meta name="tags" content="certificate" />
     <meta name="tags" content="exam" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
 <body class="container">
@@ -70,17 +71,15 @@
 </a></li>
     </ul>
 <section>
-<div class="accordion" id="accordion2">
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://yangsun.me/posts/2016-01/my-oca-java-se-7-learning-journal.html#disqus_thread">
-                Comments
-            </a>
-        </div>
-        <div id="disqus_thread" class="accordion-body collapse">
-            <div class="accordion-inner">
-                <div class="comments">
+    <div class="comments_header">
+        <a class="disqus-comment-count"
+            href="http://yangsun.me/posts/2016-01/my-oca-java-se-7-learning-journal.html#disqus_thread">
+            Comments
+        </a>
+    </div>
+    <div id="disqus_thread" class="collapse">
+        <div class="accordion-inner">
+            <div class="comments">
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'yangsunme';
@@ -94,12 +93,17 @@
      })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>                </div>
-            </div>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>            </div>
         </div>
     </div>
-</div>
 </section>
+
+<script type="text/javascript">
+	$('.disqus-comment-count').click(function(){
+	    $('.disqus_thread').slideToggle("slow");
+	});
+</script>
+
 
 </section>
 
