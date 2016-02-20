@@ -95,7 +95,7 @@ nav {
 }
 
 /* Comments*/
-#disqus_thread {
+.comments {
 	display: none;
 }
 
