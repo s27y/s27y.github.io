@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>http://yangsun.me/posts/2016-02/my-first-garden-project-grow-my-own-strawberries.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/posts/2016-02/java-se-7-programmer-i-exam-passed.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/posts/2016-02/my-domain-name-is-back-yangsun-me.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/posts/2016-01/my-oca-java-se-7-learning-journal.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/posts/2016-01/hello-world.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+
+  <url>
+    <loc>http://yangsun.me/pages/about-me.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/pages/contact.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>http://yangsun.me/pages/projects.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+
+</urlset>
