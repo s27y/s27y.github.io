@@ -26,7 +26,7 @@
     <div id="nav" class="row">
         <div class="six columns">
             <header id="banner" class="body">
-            <h1 id="site-title"><a href="http://yangsun.me/">Yang Sun <strong></strong></a></h1>
+            <a href="http://yangsun.me/"><img id="logo" alt="Back to the main site" src="http://yangsun.me/images/logo.png"/></a>
             </header><!-- /#banner -->
         </div>
         <div class="six columns">
@@ -52,7 +52,51 @@
     </address>
   </footer><!-- /.post-info -->
   <div id="article-content">
-    <p>Hello World!</p>
+    <p>Creating a blog can be easy, you can either choose any blog system and host yourself or public blog hosting provider like <a href="https://wordpress.com">WordPress.com</a>, <a href="https://www.blogger.com/">Google Blogger</a> and many other providers. If you like flecibility and love playing with different technology, self hosting blog might be your best choice, you can choice whatever technolgy you like and build a customize blog on it. If simplicity is your thing, public blog provider is your first choice, all you need to worry about is writing your content.</p>
+<p>Other than the first two catrgorys, there is a third options. You have the ability to customize your blog while the deployment process is still relativly simply. The static void generator provides a good balance between flexibility and simlicity. There are many static blog you can choice from.Check out the top popular static site generator by <a href="https://www.staticgen.com">StaticGen</a>. Today what i am going to talk about is Pelican.</p>
+<p>According to <a href="http://blog.getpelican.com">Pelican Offical Website</a></p>
+<blockquote>
+<p>Pelican is a static site generator, written in Python, that requires no database or server-side logic.</p>
+</blockquote>
+<h4>Install <code>pip</code></h4>
+<p>Download get-pip script from <a href="https://bootstrap.pypa.io/get-pip.py">get-pip.py</a> or run command in shell <code>curl -O https://bootstrap.pypa.io/get-pip.py</code>. After you have the stript locally, run command <code>python get-pip.py</code></p>
+<h5>Upgrade</h5>
+<p>If you already have pip installed and want to upgrade.</p>
+<p>On Linux or OS X: <code>pip install -U pip</code></p>
+<p>On Windows: <code>python -m pip install -U pip</code></p>
+<h4>Install <code>virtualenv</code></h4>
+<blockquote>
+<p>virtualenv is a tool to create isolated Python environments.</p>
+</blockquote>
+<p>To install virtualenv and virtualenvwrapper, run <code>pip install virtualenvwrapper</code>, this command will install wirtualenvwrapper and all its dependences.</p>
+<h5>Set up virtualenv with virtualenvwrapper</h5>
+<p>Once We have virtualenvwrapper installed, there are few more little things need be setup.</p>
+<p>Simplly add the lines below to your shell startup file (<code>.bashrc</code>, <code>.profile</code>, etc.)</p>
+<div class="highlight"><pre><span class="x">export WORKON_HOME=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/.virtualenvs</span>
+<span class="x">export PROJECT_HOME=</span><span class="p">$</span><span class="nv">HOME</span><span class="x">/Devel</span>
+<span class="x">source /usr/local/bin/virtualenvwrapper.sh</span>
+</pre></div>
+
+
+<p>After updating the shell startup file, run command <code>source .bashrc</code> or <code>source .profile</code>, this will load the new version of shell startup file.</p>
+<h5>How to use virtualenvwrapper?</h5>
+<ul>
+<li><code>workon</code> List enviornments </li>
+<li><code>mkvirtualenv pelican</code> - create a new enviornment called pelican</li>
+<li><code>workon pelican</code> -  activate the environment pelican</li>
+<li><code>deactivated</code> - deactivate the working environment</li>
+</ul>
+<h4>Install Pelican</h4>
+<p>Before install pelican, make sure you have pip and virtualenvwarpper installed and setup.</p>
+<ul>
+<li>First activate a virtualenv you created in the previous step, <code>workon pelican</code></li>
+<li>Install pelican using pip <code>pip install pelican</code></li>
+<li>If you want to use [Markdown] as markup format, install Markdown <code>pip install Markdown</code></li>
+<li>Create a pelican skeleton project via <code>pelican-quickstart</code>, you will be asked to enter some detail about your setup.</li>
+<li>Now you can write you content under content folder.</li>
+</ul>
+<h4>Github Pages</h4>
+<p>T</p>
   </div><!-- /#article-content -->
   
   

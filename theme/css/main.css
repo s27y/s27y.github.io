@@ -40,8 +40,11 @@ a:hover {
 }
 
 #banner a{
-	font-family: pixel-font;
-	color: black;
+	border-style: initial;
+}
+#logo {
+	width: 75px;
+    height: 75px;
 }
 
 nav {
