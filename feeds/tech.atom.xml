@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yang Sun</title><link href="http://yangsun.me/" rel="alternate"></link><link href="http://yangsun.me/feeds/tech.atom.xml" rel="self"></link><id>http://yangsun.me/</id><updated>2016-02-04T12:45:00+00:00</updated><entry><title>My Domain Name is Back! - YangSun.me</title><link href="http://yangsun.me/posts/2016-02/my-domain-name-is-back-yangsun-me.html" rel="alternate"></link><updated>2016-02-04T12:45:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-02-04:posts/2016-02/my-domain-name-is-back-yangsun-me.html</id><summary type="html">&lt;p&gt;I bought tons of domain in the last few years - qero.net, ebe.me, yang.so and the one I finally started using since yesterday afternoon - YangSun.me&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yang Sun</title><link href="http://yangsun.me/" rel="alternate"></link><link href="http://yangsun.me/feeds/tech.atom.xml" rel="self"></link><id>http://yangsun.me/</id><updated>2016-03-06T20:12:00+00:00</updated><entry><title>Host Pelican on Github Pages</title><link href="http://yangsun.me/posts/2016-03/host-pelican-on-github-pages.html" rel="alternate"></link><updated>2016-03-06T20:12:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-03-06:posts/2016-03/host-pelican-on-github-pages.html</id><summary type="html">&lt;p&gt;Creating a blog can be easy, you can either choose a blog system then host yourself or using public blog hosting provider like &lt;a href="https://wordpress.com"&gt;WordPress.com&lt;/a&gt;, &lt;a href="https://www.blogger.com/"&gt;Google Blogger&lt;/a&gt; and many other providers. If you like having flexibility and love playing with different technologies, a self-hosting blog might be your best choice. You can choice whatever technology you like and build a customized blog on it. If simplicity is your thing, then public blog provider is your first choice, all you need to worry about is what to write.&lt;/p&gt;
+&lt;p&gt;Other than the first two categories, there is a third option. You will have  the ability to customize your blog while the deployment process is still relatively simple. The static blog generator provides a good balance between flexibility and simplicity. There are many static blogs you can choice from. Check out the top popular static site generators ranked by &lt;a href="https://www.staticgen.com"&gt;StaticGen&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;Today what I am going to talk about is Pelican which is what beneath the blog you are reading. According to &lt;a href="http://blog.getpelican.com"&gt;Pelican Offical Website&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Pelican is a static site generator, written in Python, that requires no database or server-side logic.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3&gt;How to setup Pelican&lt;/h3&gt;
+&lt;h4&gt;Install pip&lt;/h4&gt;
+&lt;p&gt;Download get-pip script from &lt;a href="https://bootstrap.pypa.io/get-pip.py"&gt;get-pip.py&lt;/a&gt; or run command in shell &lt;code&gt;curl -O https://bootstrap.pypa.io/get-pip.py&lt;/code&gt;. After you have the script locally, run command &lt;code&gt;python get-pip.py&lt;/code&gt;&lt;/p&gt;
+&lt;h5&gt;Upgrade&lt;/h5&gt;
+&lt;p&gt;If you already have pip installed and want to upgrade.
+&lt;em&gt; On Linux or OS X: &lt;code&gt;pip install -U pip&lt;/code&gt;
+&lt;/em&gt; On Windows: &lt;code&gt;python -m pip install -U pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Install virtualenv&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;virtualenv is a tool to create isolated Python environments.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;To install virtualenv and virtualenvwrapper, run &lt;code&gt;pip install virtualenvwrapper&lt;/code&gt;, this command will install wirtualenvwrapper and all its dependencies.&lt;/p&gt;
+&lt;h5&gt;Set up virtualenv with virtualenvwrapper&lt;/h5&gt;
+&lt;p&gt;Once you have virtualenvwrapper installed, there are few more little things need be setup.&lt;/p&gt;
+&lt;p&gt;Simply add the lines below to your shell startup file (&lt;code&gt;.bashrc&lt;/code&gt;, &lt;code&gt;.profile&lt;/code&gt;, etc.)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="x"&gt;export WORKON_HOME=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="x"&gt;/.virtualenvs&lt;/span&gt;
+&lt;span class="x"&gt;export PROJECT_HOME=&lt;/span&gt;&lt;span class="p"&gt;$&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="x"&gt;/Devel&lt;/span&gt;
+&lt;span class="x"&gt;source /usr/local/bin/virtualenvwrapper.sh&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;After updating the shell startup file, run command &lt;code&gt;source .bashrc&lt;/code&gt; or &lt;code&gt;source .profile&lt;/code&gt;, this will load the new version of shell startup file. You can also reopen a terminal to pickup the changes.&lt;/p&gt;
+&lt;h5&gt;How to use virtualenvwrapper?&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;workon&lt;/code&gt; - list enviornments &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mkvirtualenv pelican&lt;/code&gt; - create a new enviornment called pelican&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;workon pelican&lt;/code&gt; -  activate the environment pelican&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;deactivated&lt;/code&gt; - deactivate the working environment&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Install Pelican&lt;/h4&gt;
+&lt;p&gt;Before install pelican, make sure you have pip and virtualenvwarpper installed and setup.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;First activate a virtualenv you created in the previous step, &lt;code&gt;workon pelican&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Install pelican using pip, &lt;code&gt;pip install pelican&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;If you want to use &lt;a href="https://daringfireball.net/projects/markdown/"&gt;Markdown&lt;/a&gt; as markup format, install Markdown, &lt;code&gt;pip install Markdown&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Choose a name for your project, create an appropriately-named directory for your project, and switch to that directory, &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;mkdir -p ~/projects/yoursite
+cd ~/projects/yoursite
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;In your pelican project directory, create a pelican skeleton project via &lt;code&gt;pelican-quickstart&lt;/code&gt;, you will be asked to enter some details about your setup.&lt;/li&gt;
+&lt;li&gt;Your pelican project is ready to use. Start writing content under &lt;code&gt;yoursite/content&lt;/code&gt; folder.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Github Pages&lt;/h4&gt;
+&lt;p&gt;After setup my pelican on my local machine, I started to wonder where should I host my pelican blog? I found that the easiest way to host pelican is via &lt;a href="https://pages.github.com"&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are two kinds of Github Pages user site and project site. The process of setting up both kinds of Github Pages are very similar. &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a Github repo for your pelican site&lt;ul&gt;
+&lt;li&gt;User page - create a repo named &lt;code&gt;username.github.io&lt;/code&gt;, where username is your username (or organization name)&lt;/li&gt;
+&lt;li&gt;project page - create a repo or use your existing one. In the repository overview, click the branch drop-down on the left-hand side. Type in &lt;code&gt;gh-pages&lt;/code&gt; and press enter. Now you have a branch called &lt;code&gt;gh-pages&lt;/code&gt; created&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Go the &lt;code&gt;output&lt;/code&gt; folder under your pelican project folder, and clone the repository&lt;ul&gt;
+&lt;li&gt;User page -&lt;code&gt;git clone -b my-branch https://git@github.com/username/myproject.git&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;project page - &lt;code&gt;git clone https://github.com/username/username.github.io&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Generate your pelican content by &lt;code&gt;pelican -s pelicanconf.py&lt;/code&gt; or &lt;code&gt;pelican -s publishconf.py&lt;/code&gt; to pick up the publish settings.&lt;/li&gt;
+&lt;li&gt;Push it to Github&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;git add --all
+git commit -m &amp;quot;Initial commit&amp;quot;
+git push -u origin master
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Your pelican blog is now live! Check it on &lt;code&gt;username.github.io&lt;/code&gt; or you project page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Links&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/s27y/s27y.github.io"&gt;The Github repo host this blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://docs.getpelican.com/en/3.6.3/"&gt;Pelican Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="pelican"></category><category term="blog"></category></entry><entry><title>My Domain Name is Back! - YangSun.me</title><link href="http://yangsun.me/posts/2016-02/my-domain-name-is-back-yangsun-me.html" rel="alternate"></link><updated>2016-02-04T12:45:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-02-04:posts/2016-02/my-domain-name-is-back-yangsun-me.html</id><summary type="html">&lt;p&gt;I bought tons of domain in the last few years - qero.net, ebe.me, yang.so and the one I finally started using since yesterday afternoon - YangSun.me&lt;/p&gt;
 &lt;p&gt;This domain was registered on an impulse in late 2014, but due to the workload from the study of my master course in UCD, it took me more than a year to get my hand on this domain.&lt;/p&gt;
 &lt;p&gt;Yesterday afternoon, I was reading a Java Cert book and started feeling boring with the tricky exam questions, so I did a quick lookup on my favourite domain reseller - &lt;a href="https://www.namecheap.com/?aff=96185"&gt;NameCheap&lt;/a&gt;. Yes! My expired domain can be registered now. I registered the domain and added three DNS settings, less than 12 hours, YangSun.me is up and running.&lt;/p&gt;
 &lt;p&gt;The first time I notice &lt;a href="https://www.namecheap.com/?aff=96185"&gt;NameCheap&lt;/a&gt; is from GitHub. GitHub has a special perk for students called &lt;a href="https://education.github.com/pack"&gt;Student Developer Pack&lt;/a&gt;. The pack has many free bits for students(like free one year .me domain name from &lt;a href="https://www.namecheap.com/?aff=96185"&gt;NameCheap&lt;/a&gt;, free 50$ credit in &lt;a href="https://m.do.co/c/f68d634be5d8"&gt;DigitalOcean&lt;/a&gt;, and many more!)&lt;/p&gt;
