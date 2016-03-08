@@ -10,10 +10,10 @@
  /* Imports */
 @import url("normalize.css");
 @import url("skeleton.css");
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans);
 
-@font-face {
-    font-family: pixel-font;
-    src: url(karmatic_arcade.ttf);
+body {
+    font-family: 'Fira Sans', sans-serif;
 }
 
 a {
