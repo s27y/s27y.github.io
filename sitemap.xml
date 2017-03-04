@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>http://yangsun.me/posts/2017-03/ssh-to-a-server-using-one-server-as-jump-box.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>http://yangsun.me/posts/2016-03/host-pelican-on-github-pages.html</loc>
     <priority>0.8</priority>
   </url>

@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yang Sun</title><link href="http://yangsun.me/" rel="alternate"></link><link href="http://yangsun.me/feeds/all.atom.xml" rel="self"></link><id>http://yangsun.me/</id><updated>2016-03-06T20:12:00+00:00</updated><entry><title>Host Pelican on Github Pages</title><link href="http://yangsun.me/posts/2016-03/host-pelican-on-github-pages.html" rel="alternate"></link><updated>2016-03-06T20:12:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-03-06:posts/2016-03/host-pelican-on-github-pages.html</id><summary type="html">&lt;p&gt;Creating a blog can be easy, you can either choose a blog system then host yourself or using public blog hosting provider like &lt;a href="https://wordpress.com"&gt;WordPress.com&lt;/a&gt;, &lt;a href="https://www.blogger.com/"&gt;Google Blogger&lt;/a&gt; and many other providers. If you like having flexibility and love playing with different technologies, a self-hosting blog might be your best choice. You can choice whatever technology you like and build a customized blog on it. If simplicity is your thing, then public blog provider is your first choice, all you need to worry about is what to write.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yang Sun</title><link href="http://yangsun.me/" rel="alternate"></link><link href="http://yangsun.me/feeds/all.atom.xml" rel="self"></link><id>http://yangsun.me/</id><updated>2017-03-04T22:51:00+00:00</updated><entry><title>SSH to a server using one server as jump box</title><link href="http://yangsun.me/posts/2017-03/ssh-to-a-server-using-one-server-as-jump-box.html" rel="alternate"></link><updated>2017-03-04T22:51:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2017-03-04:posts/2017-03/ssh-to-a-server-using-one-server-as-jump-box.html</id><summary type="html">&lt;p&gt;One of my servers is hosted inside a private network, the only way for me to SSH connect is using
+ another server that does allow connections from the Internet.&lt;/p&gt;
+&lt;p&gt;What I've been told is (and I've used it for the last one and half year), 
+first I need to connect to the jump box that allows SSH connections from the Internet,
+then SSH to the actual server I want to connect from there. It does work and works very well, 
+it never gives me any trouble, BUT this method is time-consuming: type &lt;code&gt;ssh username@hostname&lt;/code&gt; twice, 
+enter the password twice(or once/none if SSH key authentication is in place). &lt;/p&gt;
+&lt;p&gt;There has to be another way to do it. A simple, geeky way.&lt;/p&gt;
+&lt;p&gt;Here it comes. Let's say you have three servers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Server A: your laptop&lt;/li&gt;
+&lt;li&gt;Server B: a remote jump box&lt;/li&gt;
+&lt;li&gt;Server C: a remote server which can only be SSHed from server B&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You are using SSH key to connect to C.&lt;/p&gt;
+&lt;h4&gt;SSH key for server C is located on server B&lt;/h4&gt;
+&lt;p&gt;You can place the following code in &lt;code&gt;/home/&amp;lt;your_user&amp;gt;/.ssh/config&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Host &amp;lt;hostname_for_server_C&amp;gt; #You can put wildcard here, like *.example.com
+  User &amp;lt;username_for_ssh_to_server_C&amp;gt;
+  ForwardAgent No #This means the key is located on server B
+  ProxyCommand ssh &amp;lt;username_for_ssh_to_server_B&amp;gt;@&amp;lt;hostname_for_server_A&amp;gt; nc %h %p 2&amp;gt; /dev/null
+  IdentityFile &amp;lt;ssh_key_file_located_on_server_B&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Please note the file premission for /home/&lt;your_user&gt;/.ssh/config need be 600, if not run command &lt;code&gt;chmod 600 /home/&amp;lt;your_user&amp;gt;/.ssh/config&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;SSH key for server C is located on server A&lt;/h4&gt;
+&lt;p&gt;If your SSH key for server C is located on server A, then you can still use the config above with one minor setting change:
+change &lt;code&gt;ForwardAgent&lt;/code&gt; from &lt;code&gt;no&lt;/code&gt; to &lt;code&gt;yes&lt;/code&gt; in&lt;code&gt;/home/&amp;lt;your_user&amp;gt;/.ssh/config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, you can ssh to C using command &lt;code&gt;ssh &amp;lt;hostname_for_server_C&amp;gt;&lt;/code&gt;. 
+This command may request password for logging into server B, if you have 
+SSH key for server B, add following into &lt;code&gt;/home/&amp;lt;your_user&amp;gt;/.ssh/config&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;Host &amp;lt;hostname_for_server_B&amp;gt; #You can put wildcard here, like *.example.com
+    IdentityFile &amp;lt;ssh_key_file&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="linux"></category><category term="ssh"></category></entry><entry><title>Host Pelican on Github Pages</title><link href="http://yangsun.me/posts/2016-03/host-pelican-on-github-pages.html" rel="alternate"></link><updated>2016-03-06T20:12:00+00:00</updated><author><name>Yang Sun</name></author><id>tag:yangsun.me,2016-03-06:posts/2016-03/host-pelican-on-github-pages.html</id><summary type="html">&lt;p&gt;Creating a blog can be easy, you can either choose a blog system then host yourself or using public blog hosting provider like &lt;a href="https://wordpress.com"&gt;WordPress.com&lt;/a&gt;, &lt;a href="https://www.blogger.com/"&gt;Google Blogger&lt;/a&gt; and many other providers. If you like having flexibility and love playing with different technologies, a self-hosting blog might be your best choice. You can choice whatever technology you like and build a customized blog on it. If simplicity is your thing, then public blog provider is your first choice, all you need to worry about is what to write.&lt;/p&gt;
 &lt;p&gt;Other than the first two categories, there is a third option. You will have  the ability to customize your blog while the deployment process is still relatively simple. The static blog generator provides a good balance between flexibility and simplicity. There are many static blogs you can choice from. Check out the top popular static site generators ranked by &lt;a href="https://www.staticgen.com"&gt;StaticGen&lt;/a&gt;. &lt;/p&gt;
 &lt;p&gt;Today what I am going to talk about is Pelican which is what beneath the blog you are reading. According to &lt;a href="http://blog.getpelican.com"&gt;Pelican Offical Website&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;

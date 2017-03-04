@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="utf-8" />
+    <meta name="author" content="Yang Sun" />
+    <meta name="copyright" content="Yang Sun" />
+
+    <title>SSH to a server using one server as jump box / Going through one host to reach another server  · Yang Sun
+</title>
+    
+
+  <meta name="keywords" content="linux, ssh, tech, " />
+    <meta name="description" content="" />
+    
+    <link rel="stylesheet" href="/theme/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+</head>
+
+<body class="container">
+    <div id="nav" class="row">
+        <div class="six columns">
+            <header id="banner" class="body">
+            <a href="/"><img id="logo" alt="Back to the main site" src="/images/logo.png"/></a>
+            </header><!-- /#banner -->
+        </div>
+        <div class="six columns">
+            <nav id="menu"><ul>
+                <li><a href="/pages/about-me.html">About Me</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+                <li><a href="/pages/projects.html">Projects</a></li>
+            </ul></nav><!-- /#menu -->
+        </div>
+    </div><!-- /#nav -->
+
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/drafts/ssh-to-a-server-using-one-server-as-jump-box.html" rel="bookmark"
+         title="Permalink to SSH to a server using one server as jump box / Going through one host to reach another server">SSH to a server using one server as jump box / Going through one host to reach another server</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time pubdate="publish-date" datetime="2017-03-04T22:51:00+00:00">Sat 04 March 2017</time>
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/yang-sun.html">Yang Sun</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div id="article-content">
+    <p>One of my server is hosted inside a private network, the only way for me to SSH connect is using
+ another server that does allow connections from Internet.</p>
+<p>What I've been told is (and i've using it for the last a year and half), 
+first I need to connect to the jump box that allow SSH connections from Internet,
+then SSH to the actual server I want to connect from there. It does work and works very well, 
+it never give me any trouble, BUT this method is time comsuming: type <code>ssh username@hostname</code> twice, 
+enter password twice(or once/none if SSH key authentication is in place). </p>
+<p>There has to be another way to do it. A simpler, geeker way.</p>
+<p>Let's say you have three servers:</p>
+<ul>
+<li>Server A: your laptop</li>
+<li>Server B: a remote jump box</li>
+<li>Server C: a remote server which can only be SSHed from server B</li>
+</ul>
+<p>You are using SSH key to connect to C.</p>
+<h4>SSH key for server C is located on server B</h4>
+<p>You can place the following code in <code>/home/&lt;your_user&gt;/.ssh/config</code></p>
+<div class="highlight"><pre>Host &lt;hostname_for_server_C&gt; #You can put wildcard here, like *.example.com
+  User &lt;username_for_ssh_to_server_C&gt;
+  ForwardAgent No #This means the key is located on server B
+  ProxyCommand ssh &lt;username_for_ssh_to_server_B&gt;@&lt;hostname_for_server_A&gt; nc %h %p 2&gt; /dev/null
+  IdentityFile &lt;ssh_key_file_located_on_server_B&gt;
+</pre></div>
+
+
+<p>Please note the file premission for /home/<your_user>/.ssh/config need be 600, if not run command <code>chmod 600 /home/&lt;your_user&gt;/.ssh/config</code></p>
+<h4>SSH key for server C is located on server A</h4>
+<p>If your SSH key for server C is located on server A, then you can still using the config above with one minor setting change:
+change <code>ForwardAgent</code> from <code>no</code> to <code>yes</code> in<code>/home/&lt;your_user&gt;/.ssh/config</code></p>
+<p>Now, you can ssh to C using command <code>ssh &lt;hostname_for_server_C&gt;</code>. 
+This command may request password for logging into server B, if you have 
+SSH key for server B, add following into <code>/home/&lt;your_user&gt;/.ssh/config</code></p>
+<div class="highlight"><pre>Host &lt;hostname_for_server_B&gt; #You can put wildcard here, like *.example.com
+    IdentityFile &lt;ssh_key_file&gt;
+</pre></div>
+  </div><!-- /#article-content -->
+  
+    <div>
+      <h3>Tags</h3>
+      <ul class="list-of-tags tags-in-article"> 
+          <li><a href="/tag/linux.html">linux
+</a></li>
+          <li><a href="/tag/ssh.html">ssh
+</a></li>
+      </ul>
+    </div>
+  
+
+</section>
+
+    <footer id="contentinfo" class="row">
+        <div class="twelve columns">
+            <p id="footer-about">Copyright © 2016 - Yang Sun -      Powered by <a href="http://getpelican.com/">Pelican</a>
+            </p><!-- /#footer-about -->
+        </div>
+    </footer><!-- /#contentinfo -->
+
+
+
+</body>
+</html>
